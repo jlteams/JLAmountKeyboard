@@ -7,7 +7,6 @@
 //
 
 #import "JLAmountKeyboard.h"
-#import "AppDelegate.h"
 
 @implementation JLAmountKeyboard
 
