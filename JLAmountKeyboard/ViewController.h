@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLAmountKeyboard.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <JLAmountKeyboardDelegate>
 
 
 @end

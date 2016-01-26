@@ -16,29 +16,41 @@
     if ([sender isKindOfClass:[UIButton class]]) {
         UIButton *button = sender;
 
-        if ([self.nextResponder isKindOfClass:[UITextField class]]) {
-
-            UITextField *textField = (UITextField *)self.nextResponder;
-
-            if (button.tag == 12) {
-                [textField deleteBackward];
-            } else {
-                textField.text = [textField.text stringByAppendingString:button.titleLabel.text];
-            }
-
-        } else if ([self.nextResponder isKindOfClass:[UITextView class]]) {
-
-            UITextView *textView = (UITextView *)self.nextResponder;
-
-            if (button.tag == 12) {
-                [textView deleteBackward];
-            } else {
-                textView.text = [textView.text stringByAppendingString:button.titleLabel.text];
-            }
+        if (_delegate && [_delegate respondsToSelector:@selector(jlAmountKeyboard:)]) {
+            [_delegate jlAmountKeyboard:button];
         }
+        
+
+//        (textDocumentProxy as UIKeyInput).insertText("\(string!)")
+
+
+//        NSLog(@"%@",self.nextResponder);
+//
+//        if ([self.nextResponder isKindOfClass:[UITextField class]] && [self.nextResponder isFirstResponder]) {
+//
+//            UITextField *textField = (UITextField *)self.nextResponder;
+//
+//            if (button.tag == 12) {
+//                [textField deleteBackward];
+//            } else {
+//                textField.text = [textField.text stringByAppendingString:button.titleLabel.text];
+//            }
+//
+//        } else if ([self.nextResponder isKindOfClass:[UITextView class]] && [self.nextResponder isFirstResponder]) {
+//
+//            UITextView *textView = (UITextView *)self.nextResponder;
+//
+//            if (button.tag == 12) {
+//                [textView deleteBackward];
+//            } else {
+//                textView.text = [textView.text stringByAppendingString:button.titleLabel.text];
+//            }
+//        }
+//
+//    }
 
     }
-
 }
+
 
 @end

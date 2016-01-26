@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JLAmountKeyboardDelegate <NSObject>
+
+- (void)jlAmountKeyboard:(UIButton *)button;
+
+@end
+
 @interface JLAmountKeyboard : UIView
+
+@property (nonatomic,weak) id<JLAmountKeyboardDelegate> delegate;
 
 @end
